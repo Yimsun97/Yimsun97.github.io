@@ -86,15 +86,18 @@
 <meta name="description" content="本文主要解决Win10系统上GPU版PyTorch的环境配置问题。">
 <meta name="keywords" content="Python,PyTorch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="win10上GPU版Pytorch环境配置教程">
-<meta property="og:url" content="http://yoursite.com/2019/09/25/win10上GPU版Pytorch环境配置/index.html">
+<meta property="og:title" content="win10上GPU版PyTorch环境配置">
+<meta property="og:url" content="http://yoursite.com/2019/09/25/win10上GPU版PyTorch环境配置/index.html">
 <meta property="og:site_name" content="Eric Sun&#39;s Blog">
 <meta property="og:description" content="本文主要解决Win10系统上GPU版PyTorch的环境配置问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T12:29:56.015Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/25/win10上GPU版PyTorch环境配置/pic1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/25/win10上GPU版PyTorch环境配置/pic2.jpg">
+<meta property="og:updated_time" content="2019-09-25T14:45:16.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="win10上GPU版Pytorch环境配置教程">
+<meta name="twitter:title" content="win10上GPU版PyTorch环境配置">
 <meta name="twitter:description" content="本文主要解决Win10系统上GPU版PyTorch的环境配置问题。">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/25/win10上GPU版PyTorch环境配置/pic1.png">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/25/win10上GPU版Pytorch环境配置/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/25/win10上GPU版PyTorch环境配置/">
 
 
 
 
 
-  <title>win10上GPU版Pytorch环境配置教程 | Eric Sun's Blog</title>
+  <title>win10上GPU版PyTorch环境配置 | Eric Sun's Blog</title>
   
 
 
@@ -299,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/win10上GPU版Pytorch环境配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/win10上GPU版PyTorch环境配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eric Sun">
@@ -316,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">win10上GPU版Pytorch环境配置教程</h1>
+          <h1 class="post-title" itemprop="name headline">win10上GPU版PyTorch环境配置</h1>
         
 
         <div class="post-meta">
@@ -398,6 +401,34 @@
 </blockquote>
 <a id="more"></a>
 
+<h2 id="检查配置"><a href="#检查配置" class="headerlink" title="检查配置"></a>检查配置</h2><p>按 <strong>Win+X</strong> 键打开设备管理器，找到显示适配器，查看自己电脑的显卡配置，如下图所示。</p>
+<img src="/2019/09/25/win10上GPU版PyTorch环境配置/pic1.png" alt="设备管理器" style="zoom:67%;">
+
+<p>我的电脑是NVIDIA GeForce GTX 960M的显卡。</p>
+<h2 id="更新驱动"><a href="#更新驱动" class="headerlink" title="更新驱动"></a>更新驱动</h2><p>打开<a href="https://www.nvidia.com/Download/index.aspx" target="_blank" rel="noopener">NVIDIA官网</a>更新驱动，选择第一步检查的自己电脑的配置。以我的电脑为例，依次为选择“GeForce”，“GeForce 900M Series (Notebooks)”，”GeForce GTX 960M”，“Windows 10 64-bit”，其他不做改动。点击“Search”后，点击“DOWNLOAD”进行下载。</p>
+<p>下载后进行安装，安装过程中安装路径可自定义，选择“只安装图形驱动程序”即可。此过程从略。</p>
+<h2 id="用conda安装"><a href="#用conda安装" class="headerlink" title="用conda安装"></a>用conda安装</h2><p>利用conda安装GPU版PyTorch的好处是，利用Anaconda包管理器安装cudatoolkit，避免了分别安装CUDA和cuDNN的不便。Anaconda包管理器的安装及基本用法可参见其他教程，此处从略。</p>
+<p>打开Anaconda Promt，执行<code>conda create -n pt1 python=3.6 spyder</code>，创建环境pt1。</p>
+<p>打开<a href="https://pytorch.org" target="_blank" rel="noopener">PyTorch官网</a>，根据自己的系统配置进行选择，如下图所示。</p>
+<img src="/2019/09/25/win10上GPU版PyTorch环境配置/pic2.jpg" alt="配置选择" style="zoom:67%;">
+
+<p>上图是我电脑的选择。在刚刚建立的环境pt1中运行“Run this Command”对应的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=9.2 -c pytorch -c defaults -c numba/label/dev</span><br></pre></td></tr></table></figure>
+
+<p>此过程较为耗时，等待全过程安装完毕。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>安装完毕后，在pt1环境中打开Spyder，即，可在开始菜单单击“Spyder(pt1)”。</p>
+<p>在Ipython中输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="keyword">import</span> torch <span class="keyword">as</span> t</span><br><span class="line">print(t.cuda.is_available())</span><br></pre></td></tr></table></figure>
+
+<p>若输出为True，则表明安装配置成功。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><p><a href="https://pytorch.org" target="_blank" rel="noopener">PyTorch官网</a></p>
+</li>
+<li><p><a href="https://www.nvidia.com/Download/index.aspx" target="_blank" rel="noopener">NVIDIA驱动更新</a></p>
+</li>
+<li><p><a href="https://pytorch.apachecn.org/docs/1.2/" target="_blank" rel="noopener">PyTorch 1.0 中文文档&amp;教程</a></p>
+</li>
+</ul>
 
       
     </div>
@@ -430,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/25/win10上GPU版Pytorch环境配置教程/" rel="next" title="win10上GPU版Pytorch环境配置">
-                <i class="fa fa-chevron-left"></i> win10上GPU版Pytorch环境配置
+              <a href="/2019/09/25/写在开头/" rel="next" title="写在开头">
+                <i class="fa fa-chevron-left"></i> 写在开头
               </a>
             
           </div>
@@ -493,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -511,7 +551,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -598,6 +638,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查配置"><span class="nav-number">1.</span> <span class="nav-text">检查配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新驱动"><span class="nav-number">2.</span> <span class="nav-text">更新驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用conda安装"><span class="nav-number">3.</span> <span class="nav-text">用conda安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
