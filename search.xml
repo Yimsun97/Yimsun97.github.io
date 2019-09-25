@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[写在开头]]></title>
+    <url>%2F2019%2F09%2F25%2F%E5%86%99%E5%9C%A8%E5%BC%80%E5%A4%B4%2F</url>
+    <content type="text"><![CDATA[“万事开头难。”历时3天，终于把个人博客捣鼓了出来。我采用的是GitHub+Hexo的搭建方式，NexT.Gemini主题，Gitalk评论插件。 在搭建过程中，我参考了网上很多的教程，此处特别感谢Zhechen’s Personal Website和韦阳的博客，让我的搭建过程少走了很多弯路。另外，官网Hexo和主题官网NexT也给了我很多帮助。 作为一名理工科的学生，我会通过博客，记录一些学习笔记和自认为有意义、有意思的事情。在帮助自己加深印象的同时，也希望能给同样寻求答案的人一些帮助。 我发现，网络上的博客质量参差不齐。希望我的博客能够始终保持高质量。既然写，就要写好、写清楚。]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F09%2F18%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
