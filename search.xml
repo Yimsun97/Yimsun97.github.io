@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[win10上GPU版Pytorch环境配置教程]]></title>
+    <url>%2F2019%2F09%2F25%2Fwin10%E4%B8%8AGPU%E7%89%88Pytorch%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[本文主要解决Win10系统上GPU版PyTorch的环境配置问题。]]></content>
+      <categories>
+        <category>程序语言</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[win10上GPU版Pytorch环境配置]]></title>
+    <url>%2F2019%2F09%2F25%2Fwin10%E4%B8%8AGPU%E7%89%88Pytorch%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[本文主要解决Win10系统上GPU版PyTorch的环境配置问题。 检查配置按*Win+X *键打开设备管理器，找到显示适配器，查看自己电脑的显卡配置，如下图所示。 我的电脑是NVIDIA GeForce GTX 960M的显卡。 更新驱动打开NVIDIA官网更新驱动，选择第一步检查的自己电脑的配置。以我的电脑为例，依次为选择“GeForce”，“GeForce 900M Series (Notebooks)”，”GeForce GTX 960M”，“Windows 10 64-bit”，其他不做改动。点击“Search”后，点击“DOWNLOAD”进行下载。 下载后进行安装，安装过程中安装路径可自定义，选择“只安装图形驱动程序”即可。此过程从略。 用conda安装利用conda安装GPU版PyTorch的好处是，利用Anaconda包管理器安装cudatoolkit，避免了分别安装CUDA和cuDNN的不便。Anaconda包管理器的安装及基本用法可参见其他教程，此处从略。 打开Anaconda Promt，执行conda create -n pt1 python=3.6 spyder，创建环境pt1。 打开PyTorch官网，根据自己的系统配置进行选择。 上图是我电脑的选择。在刚刚建立的环境pt1中运行“Run this Command”对应的命令 1conda install pytorch torchvision cudatoolkit=9.2 -c pytorch -c defaults -c numba/label/dev 此过程较为耗时，等待全过程安装完毕。 测试安装完毕后，在pt1环境中打开Spyder，即，可在开始菜单单击“Spyder(pt1)”。 在Ipython中输入 123from __future__ import print_functionimport torch as tprint(t.cuda.is_available()) 若输出为True，则表明安装配置成功。 参考资料 PyTorch官网 NVIDIA驱动更新 PyTorch 1.0 中文文档&amp;教程]]></content>
+      <categories>
+        <category>程序语言</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[写在开头]]></title>
     <url>%2F2019%2F09%2F25%2F%E5%86%99%E5%9C%A8%E5%BC%80%E5%A4%B4%2F</url>
     <content type="text"><![CDATA[“万事开头难。”历时3天，终于把个人博客捣鼓了出来。我采用的是GitHub+Hexo的搭建方式，NexT.Gemini主题，Gitalk评论插件。 在搭建过程中，我参考了网上很多的教程，此处特别感谢Zhechen’s Personal Website和韦阳的博客，让我的搭建过程少走了很多弯路。另外，官网Hexo和主题官网NexT也给了我很多帮助。 作为一名理工科的学生，我会通过博客，记录一些学习笔记和自认为有意义、有意思的事情。在帮助自己加深印象的同时，也希望能给同样寻求答案的人一些帮助。 我发现，网络上的博客质量参差不齐。希望我的博客能够始终保持高质量。既然写，就要写好、写清楚。]]></content>
