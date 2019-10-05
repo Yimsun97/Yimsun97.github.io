@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="LaTeX,">
 
 
 
@@ -85,16 +85,22 @@
 
 
 
-<meta name="description" content="Floating as the river flows.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Eric Sun&#39;s Blog">
-<meta property="og:url" content="https://yimsun97.github.io/categories/程序语言/index.html">
+<meta name="description" content="在用 Beamer 制作幻灯片的过程中，如果页数或者图片过多，往往造成 LaTeX 编译速度慢的问题。此时，如果能够分文件进行编译查看效果，最后插入到主文件中编译，制作幻灯片的效率势必大大提高。本文主要介绍Beamer制作幻灯片时分文件编译的方法。">
+<meta name="keywords" content="LaTeX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beamer制作幻灯片时分文件编译">
+<meta property="og:url" content="https://yimsun97.github.io/2019/10/05/Beamer制作幻灯片时分文件编译/index.html">
 <meta property="og:site_name" content="Eric Sun&#39;s Blog">
-<meta property="og:description" content="Floating as the river flows.">
+<meta property="og:description" content="在用 Beamer 制作幻灯片的过程中，如果页数或者图片过多，往往造成 LaTeX 编译速度慢的问题。此时，如果能够分文件进行编译查看效果，最后插入到主文件中编译，制作幻灯片的效率势必大大提高。本文主要介绍Beamer制作幻灯片时分文件编译的方法。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://yimsun97.github.io/2019/10/05/Beamer制作幻灯片时分文件编译/Commonsoftware/hexo/source/_posts/Beamer制作幻灯片时分文件编译/pic1.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2019/10/05/Beamer制作幻灯片时分文件编译/Commonsoftware/hexo/source/_posts/Beamer制作幻灯片时分文件编译/pic2.png">
+<meta property="og:image" content="https://yimsun97.github.io/2019/10/05/Beamer制作幻灯片时分文件编译/Commonsoftware/hexo/source/_posts/Beamer制作幻灯片时分文件编译/pic3.png">
+<meta property="og:updated_time" content="2019-10-05T09:05:10.925Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eric Sun&#39;s Blog">
-<meta name="twitter:description" content="Floating as the river flows.">
+<meta name="twitter:title" content="Beamer制作幻灯片时分文件编译">
+<meta name="twitter:description" content="在用 Beamer 制作幻灯片的过程中，如果页数或者图片过多，往往造成 LaTeX 编译速度慢的问题。此时，如果能够分文件进行编译查看效果，最后插入到主文件中编译，制作幻灯片的效率势必大大提高。本文主要介绍Beamer制作幻灯片时分文件编译的方法。">
+<meta name="twitter:image" content="https://yimsun97.github.io/2019/10/05/Beamer制作幻灯片时分文件编译/Commonsoftware/hexo/source/_posts/Beamer制作幻灯片时分文件编译/pic1.jpg">
 
 
 
@@ -124,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://yimsun97.github.io/categories/程序语言/">
+  <link rel="canonical" href="https://yimsun97.github.io/2019/10/05/Beamer制作幻灯片时分文件编译/">
 
 
 
 
 
-  <title>分类: 程序语言 | Eric Sun's Blog</title>
+  <title>Beamer制作幻灯片时分文件编译 | Eric Sun's Blog</title>
   
 
 
@@ -149,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,79 +291,212 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>程序语言<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yimsun97.github.io/2019/10/05/Beamer制作幻灯片时分文件编译/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Sun">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/S.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eric Sun's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/10/05/Beamer制作幻灯片时分文件编译/" itemprop="url">
-              
-                <span itemprop="name">Beamer制作幻灯片时分文件编译</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Beamer制作幻灯片时分文件编译</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-05T11:04:51+08:00" content="2019-10-05">
-          10-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-05T11:04:51+08:00">
+                2019-10-05
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序语言/" itemprop="url" rel="index">
+                    <span itemprop="name">程序语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <blockquote>
+<p>在用 Beamer 制作幻灯片的过程中，如果页数或者图片过多，往往造成 LaTeX 编译速度慢的问题。此时，如果能够分文件进行编译查看效果，最后插入到主文件中编译，制作幻灯片的效率势必大大提高。本文主要介绍Beamer制作幻灯片时分文件编译的方法。</p>
+</blockquote>
+<a id="more"></a>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/25/win10上GPU版PyTorch的环境配置/" itemprop="url">
-              
-                <span itemprop="name">win10上GPU版PyTorch的环境配置</span>
-              
-            </a>
-        
-      </h2>
+<h2 id="Beamer-简介"><a href="#Beamer-简介" class="headerlink" title="Beamer 简介"></a>Beamer 简介</h2><p><strong>Beamer</strong> 是一个用于创建演示文稿 <a href="https://zh.wikipedia.org/wiki/LaTeX" target="_blank" rel="noopener">LaTeX</a> 的文档类。Beamer 创建演示文稿相对于 PowerPoint 来说，优点在于简介大方，同时也有很多可直接运用的美观的模板，适合于数学公式较多的学术演示，移植性较好；缺点是不如 PowerPoint 那样直观灵活，动画支持较差，多图片排版较繁琐，播放时需要如 Adobe Reader 之类的阅读器。</p>
+<p>网络上的Beamer教程较多，本文不再赘述其基本用法。更多关于 Beamer 作展示的利弊讨论参考 <a href="https://tex.stackexchange.com/questions/41116/why-should-i-use-latex-for-presentations" target="_blank" rel="noopener">Why should I use LaTeX for presentations?</a>  </p>
+<p>总之， Beamer 较适用于数学公式较多、图片较少，注重内容的学术展示。</p>
+<p>关于可用的 Beamer 版式主题和颜色主题，这个 <a href="https://hartwork.org/beamer-theme-matrix/" target="_blank" rel="noopener">网站</a> 给出了二者的组合，可以在比较后选择喜欢的用 <code>\usetheme{}</code> 引用版式主题，用 <code>usecolortheme{}</code> 引用颜色主题。</p>
+<h2 id="Beamer-分文件编译"><a href="#Beamer-分文件编译" class="headerlink" title="Beamer 分文件编译"></a>Beamer 分文件编译</h2><p>这里我们介绍利用 Beamer 分文件编译的一种方法。参考了 StackExchange 上的 <a href="https://tex.stackexchange.com/questions/102384/how-to-have-each-slide-in-a-separate-file-each-compilable-then-combine-them" target="_blank" rel="noopener">这篇帖子</a> 。基本思路是利用 Tomasz M. Trzeciak 编写的 <code>docmute</code> 包，该包文档参考 <a href="http://ctan.math.washington.edu/tex-archive/macros/latex/contrib/docmute/docmute.pdf" target="_blank" rel="noopener">The docmute package</a> 。</p>
+<p>我的环境配置是 <strong>TeX Live 2017</strong> + <strong>TeX Studio 2018</strong> 。</p>
+<p>首先，我们打开 TeX Studio 新建一个主文件 <code>main.tex</code> ，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexbeamer&#125;</span><br><span class="line">\usepackage&#123;filecontents&#125;</span><br><span class="line">\begin&#123;filecontents*&#125;&#123;main.tex,pg1.tex&#125;</span><br><span class="line">\documentclass&#123;beamer&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;frame&#125;</span><br><span class="line">	世界！</span><br><span class="line">\end&#123;frame&#125;</span><br><span class="line">\end&#123;document&#125;</span><br><span class="line">\end&#123;filecontents*&#125;</span><br><span class="line"></span><br><span class="line">\usepackage&#123;docmute&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\input&#123;main&#125;</span><br><span class="line">\input&#123;pg1&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-25T20:13:45+08:00" content="2019-09-25">
-          09-25
-        </time>
-      </div>
+<p>然后，我们新建一个名为 <code>pg1</code> 的子文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexbeamer&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;frame&#125;</span><br><span class="line">	你好！</span><br><span class="line">\end&#123;frame&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<p>此时，主文件和子文件均可独立编译。在 TeX Studio 中的具体方法是</p>
+<ul>
+<li>主文件：直接编译即可；</li>
+<li>子文件：先将子文件设置为主文档，再编译就是只编译子文件得到的效果。设置主文档方法如下图。 </li>
+</ul>
+<img src="/2019/10/05/Beamer制作幻灯片时分文件编译/Commonsoftware\hexo\source\_posts\Beamer制作幻灯片时分文件编译\pic1.jpg" alt="设置主文档" div align="center" style="zoom:67%;">
 
+
+
+<p>编译主文件得到效果如下：</p>
+<img src="/2019/10/05/Beamer制作幻灯片时分文件编译/Commonsoftware\hexo\source\_posts\Beamer制作幻灯片时分文件编译\pic2.png" alt="设置主文档" div align="center" style="zoom:67%;">
+
+<p>只编译子文件得到效果如下：</p>
+<img src="/2019/10/05/Beamer制作幻灯片时分文件编译/Commonsoftware\hexo\source\_posts\Beamer制作幻灯片时分文件编译\pic3.png" alt="设置主文档" div align="center" style="zoom:67%;">
+
+<p>由此，我们可以将 Beamer 分为若干个 Section （一般为3~5个比较好），分别制作每个部分的子文后编译查看效果，若内容和排版均符合要求，即可编译主文件。这样一方面节省了编译时间，另一方面也提高了代码的可读性，提高了工作效率。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://hartwork.org/beamer-theme-matrix/" target="_blank" rel="noopener">Beamer 版式和颜色主题组合</a> </li>
+<li><a href="https://tex.stackexchange.com/questions/41116/why-should-i-use-latex-for-presentations" target="_blank" rel="noopener">Beamer 的应用场景</a></li>
+<li><a href="https://tex.stackexchange.com/questions/102384/how-to-have-each-slide-in-a-separate-file-each-compilable-then-combine-them" target="_blank" rel="noopener">Beamer 分文件编译的方法</a> </li>
+<li><a href="http://ctan.math.washington.edu/tex-archive/macros/latex/contrib/docmute/docmute.pdf" target="_blank" rel="noopener">docmute 包源码文档</a> </li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/25/win10上GPU版PyTorch的环境配置/" rel="next" title="win10上GPU版PyTorch的环境配置">
+                <i class="fa fa-chevron-left"></i> win10上GPU版PyTorch的环境配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -365,6 +504,13 @@
 
 
           
+
+  
+    <div id="gitalk-container"></div>	
+	
+  
+
+
 
         </div>
         
@@ -385,8 +531,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -490,6 +645,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Beamer-简介"><span class="nav-number">1.</span> <span class="nav-text">Beamer 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Beamer-分文件编译"><span class="nav-number">2.</span> <span class="nav-text">Beamer 分文件编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -662,6 +833,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -702,6 +877,22 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '9977c3c44b49f30998d2',
+          clientSecret: 'f2540326e1ea3523d95834fa253b6f07fdddf1ae',
+          repo: 'Yimsun97.github.io',
+          owner: 'Yimsun97',
+          admin: ['Yimsun97'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
 

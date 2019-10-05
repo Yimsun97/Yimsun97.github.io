@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Beamer制作幻灯片时分文件编译]]></title>
+    <url>%2F2019%2F10%2F05%2FBeamer%E5%88%B6%E4%BD%9C%E5%B9%BB%E7%81%AF%E7%89%87%E6%97%B6%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%2F</url>
+    <content type="text"><![CDATA[在用 Beamer 制作幻灯片的过程中，如果页数或者图片过多，往往造成 LaTeX 编译速度慢的问题。此时，如果能够分文件进行编译查看效果，最后插入到主文件中编译，制作幻灯片的效率势必大大提高。本文主要介绍Beamer制作幻灯片时分文件编译的方法。 Beamer 简介Beamer 是一个用于创建演示文稿 LaTeX 的文档类。Beamer 创建演示文稿相对于 PowerPoint 来说，优点在于简介大方，同时也有很多可直接运用的美观的模板，适合于数学公式较多的学术演示，移植性较好；缺点是不如 PowerPoint 那样直观灵活，动画支持较差，多图片排版较繁琐，播放时需要如 Adobe Reader 之类的阅读器。 网络上的Beamer教程较多，本文不再赘述其基本用法。更多关于 Beamer 作展示的利弊讨论参考 Why should I use LaTeX for presentations? 总之， Beamer 较适用于数学公式较多、图片较少，注重内容的学术展示。 关于可用的 Beamer 版式主题和颜色主题，这个 网站 给出了二者的组合，可以在比较后选择喜欢的用 \usetheme{} 引用版式主题，用 usecolortheme{} 引用颜色主题。 Beamer 分文件编译这里我们介绍利用 Beamer 分文件编译的一种方法。参考了 StackExchange 上的 这篇帖子 。基本思路是利用 Tomasz M. Trzeciak 编写的 docmute 包，该包文档参考 The docmute package 。 我的环境配置是 TeX Live 2017 + TeX Studio 2018 。 首先，我们打开 TeX Studio 新建一个主文件 main.tex ，内容如下： 12345678910111213141516\documentclass&#123;ctexbeamer&#125;\usepackage&#123;filecontents&#125;\begin&#123;filecontents*&#125;&#123;main.tex,pg1.tex&#125;\documentclass&#123;beamer&#125;\begin&#123;document&#125;\begin&#123;frame&#125; 世界！\end&#123;frame&#125;\end&#123;document&#125;\end&#123;filecontents*&#125;\usepackage&#123;docmute&#125;\begin&#123;document&#125;\input&#123;main&#125;\input&#123;pg1&#125;\end&#123;document&#125; 然后，我们新建一个名为 pg1 的子文件： 123456\documentclass&#123;ctexbeamer&#125;\begin&#123;document&#125;\begin&#123;frame&#125; 你好！\end&#123;frame&#125;\end&#123;document&#125; 此时，主文件和子文件均可独立编译。在 TeX Studio 中的具体方法是 主文件：直接编译即可； 子文件：先将子文件设置为主文档，再编译就是只编译子文件得到的效果。设置主文档方法如下图。 编译主文件得到效果如下： 只编译子文件得到效果如下： 由此，我们可以将 Beamer 分为若干个 Section （一般为3~5个比较好），分别制作每个部分的子文后编译查看效果，若内容和排版均符合要求，即可编译主文件。这样一方面节省了编译时间，另一方面也提高了代码的可读性，提高了工作效率。 参考资料 Beamer 版式和颜色主题组合 Beamer 的应用场景 Beamer 分文件编译的方法 docmute 包源码文档]]></content>
+      <categories>
+        <category>程序语言</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[win10上GPU版PyTorch的环境配置]]></title>
     <url>%2F2019%2F09%2F25%2Fwin10%E4%B8%8AGPU%E7%89%88PyTorch%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[本文主要解决Win10系统上GPU版PyTorch的环境配置问题。 检查配置按 Win+X 键打开设备管理器，找到显示适配器，查看自己电脑的显卡配置，如下图所示。 我的电脑是NVIDIA GeForce GTX 960M的显卡。 更新驱动打开NVIDIA官网更新驱动，选择第一步检查的自己电脑的配置。以我的电脑为例，依次为选择“GeForce”，“GeForce 900M Series (Notebooks)”，”GeForce GTX 960M”，“Windows 10 64-bit”，其他不做改动。点击“Search”后，点击“DOWNLOAD”进行下载。 下载后进行安装，安装过程中安装路径可自定义，选择“只安装图形驱动程序”即可。此过程从略。 用conda安装利用conda安装GPU版PyTorch的好处是，利用Anaconda包管理器安装cudatoolkit，避免了分别安装CUDA和cuDNN的不便。Anaconda包管理器的安装及基本用法可参见其他教程，此处从略。 打开Anaconda Promt，执行conda create -n pt1 python=3.6 spyder，创建环境pt1。 打开PyTorch官网，根据自己的系统配置进行选择，如下图所示。 上图是我电脑的选择。在刚刚建立的环境pt1中运行“Run this Command”对应的命令 1conda install pytorch torchvision cudatoolkit=9.2 -c pytorch -c defaults -c numba/label/dev 此过程较为耗时，等待全过程安装完毕。 测试安装完毕后，在pt1环境中打开Spyder，即，可在开始菜单单击“Spyder(pt1)”。 在Ipython中输入 123from __future__ import print_functionimport torch as tprint(t.cuda.is_available()) 若输出为True，则表明安装配置成功。 参考资料 PyTorch官网 NVIDIA驱动更新 PyTorch 1.0 中文文档&amp;教程]]></content>
