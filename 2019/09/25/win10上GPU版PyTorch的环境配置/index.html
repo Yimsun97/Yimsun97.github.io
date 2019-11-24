@@ -93,13 +93,13 @@
 <meta property="og:site_name" content="Eric Sun&#39;s Blog">
 <meta property="og:description" content="本文主要解决Win10系统上GPU版PyTorch的环境配置问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://yimsun97.github.io/2019/09/25/win10上GPU版PyTorch的环境配置/Commonsoftware/hexo/source/_posts/win10上GPU版PyTorch的环境配置.assets/pic1.png">
-<meta property="og:image" content="https://yimsun97.github.io/2019/09/25/win10上GPU版PyTorch的环境配置/Commonsoftware/hexo/source/_posts/win10上GPU版PyTorch的环境配置.assets/pic2.jpg">
-<meta property="og:updated_time" content="2019-11-24T09:01:03.130Z">
+<meta property="og:image" content="https://yimsun97.github.io/win10上GPU版PyTorch的环境配置/设备信息.png">
+<meta property="og:image" content="https://yimsun97.github.io/2019/09/25/win10上GPU版PyTorch的环境配置/pytorch官网.jpg">
+<meta property="og:updated_time" content="2019-11-24T13:21:52.852Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="win10上GPU版PyTorch的环境配置">
 <meta name="twitter:description" content="本文主要解决Win10系统上GPU版PyTorch的环境配置问题。">
-<meta name="twitter:image" content="https://yimsun97.github.io/2019/09/25/win10上GPU版PyTorch的环境配置/Commonsoftware/hexo/source/_posts/win10上GPU版PyTorch的环境配置.assets/pic1.png">
+<meta name="twitter:image" content="https://yimsun97.github.io/win10上GPU版PyTorch的环境配置/设备信息.png">
 
 
 
@@ -401,14 +401,14 @@
         <p>本文主要解决Win10系统上GPU版PyTorch的环境配置问题。</p>
 <a id="more"></a>
 <h2 id="检查配置"><a href="#检查配置" class="headerlink" title="检查配置"></a>检查配置</h2><p>按 <strong>Win+X</strong> 键打开设备管理器，找到显示适配器，查看自己电脑的显卡配置，如下图所示。</p>
-<p><img src="//yimsun97.github.io/2019/09/25/win10上GPU版PyTorch的环境配置/Commonsoftware\hexo\source\_posts\win10上GPU版PyTorch的环境配置.assets\pic1.png" alt="设备管理器" style="zoom:67%;"></p>
+<p><img src="\win10上GPU版PyTorch的环境配置\设备信息.png" div align="center" style="zoom:67%;"></p>
 <p>我的电脑是NVIDIA GeForce GTX 960M的显卡。</p>
 <h2 id="更新驱动"><a href="#更新驱动" class="headerlink" title="更新驱动"></a>更新驱动</h2><p>打开<a href="https://www.nvidia.com/Download/index.aspx" target="_blank" rel="noopener">NVIDIA官网</a>更新驱动，选择第一步检查的自己电脑的配置。以我的电脑为例，依次为选择“GeForce”，“GeForce 900M Series (Notebooks)”，”GeForce GTX 960M”，“Windows 10 64-bit”，其他不做改动。点击“Search”后，点击“DOWNLOAD”进行下载。</p>
 <p>下载后进行安装，安装过程中安装路径可自定义，选择“只安装图形驱动程序”即可。此过程从略。</p>
 <h2 id="用conda安装"><a href="#用conda安装" class="headerlink" title="用conda安装"></a>用conda安装</h2><p>利用conda安装GPU版PyTorch的好处是，利用Anaconda包管理器安装cudatoolkit，避免了分别安装CUDA和cuDNN的不便。Anaconda包管理器的安装及基本用法可参见其他教程，此处从略。</p>
 <p>打开Anaconda Promt，执行<code>conda create -n pt1 python=3.6 spyder</code>，创建环境pt1。</p>
 <p>打开<a href="https://pytorch.org" target="_blank" rel="noopener">PyTorch官网</a>，根据自己的系统配置进行选择，如下图所示。</p>
-<p><img src="//yimsun97.github.io/2019/09/25/win10上GPU版PyTorch的环境配置/Commonsoftware\hexo\source\_posts\win10上GPU版PyTorch的环境配置.assets\pic2.jpg" alt="配置选择" style="zoom:67%;"></p>
+<p><img src="//yimsun97.github.io/2019/09/25/win10上GPU版PyTorch的环境配置/pytorch官网.jpg" div align="center" style="zoom:67%;"></p>
 <p>上图是我电脑的选择。在刚刚建立的环境pt1中运行“Run this Command”对应的命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=9.2 -c pytorch -c defaults -c numba/label/dev</span><br></pre></td></tr></table></figure>
 <p>此过程较为耗时，等待全过程安装完毕。</p>
