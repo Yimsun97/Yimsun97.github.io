@@ -93,15 +93,15 @@
 <meta property="og:site_name" content="Eric Sun&#39;s Blog">
 <meta property="og:description" content="近期学习了 coursera 上 Andrew Ng 的机器学习课程[1]。总体而言，该课程是入门机器学习的绝佳教程，整体难度不大，但概括了机器学习中很多基础的概念。但弊端在于跳过了过多数学推导，导致有些问题讲解得不是很清楚。特别是在第5周课程 Neural Networks: Learning 中，虽讲解了 BP 算法的轮廓和执行过程，但没有计算图的辅助和数学公式的推导就很难理解，且出现了较多的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门/general-neural-network.jpg">
-<meta property="og:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门/computational-graph.jpg">
-<meta property="og:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门/computational-graph-m1.jpg">
-<meta property="og:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门/computational-graph-m2.jpg">
-<meta property="og:updated_time" content="2019-11-24T09:07:00.536Z">
+<meta property="og:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/general-neural-network.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/computational-graph.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/computational-graph-m1.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/computational-graph-m2.jpg">
+<meta property="og:updated_time" content="2019-11-24T12:49:56.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络Backpropagation算法入门">
 <meta name="twitter:description" content="近期学习了 coursera 上 Andrew Ng 的机器学习课程[1]。总体而言，该课程是入门机器学习的绝佳教程，整体难度不大，但概括了机器学习中很多基础的概念。但弊端在于跳过了过多数学推导，导致有些问题讲解得不是很清楚。特别是在第5周课程 Neural Networks: Learning 中，虽讲解了 BP 算法的轮廓和执行过程，但没有计算图的辅助和数学公式的推导就很难理解，且出现了较多的">
-<meta name="twitter:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门/general-neural-network.jpg">
+<meta name="twitter:image" content="https://yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/general-neural-network.jpg">
 
 
 
@@ -411,8 +411,8 @@
 <p><strong>Step 5</strong> 反复执行<strong>Step 2</strong> ~ <strong>Step 4</strong> 至收敛为止。</p>
 <p>Backpropagation 算法是计算神经网络梯度（<strong>Step 3</strong>）的重要算法，比起计算导数的差分算法，它大大提升了导数的计算速度，进而加快了神经网络的训练速度。</p>
 <h2 id="符号系统"><a href="#符号系统" class="headerlink" title="符号系统"></a>符号系统</h2><p>本篇笔记的符号系统与 coursera 课程上的基本保持一致，略有修改。简述如下：</p>
-<p>图1为神经网络的示例图（未画出偏置项），该网络用于一个多元分类问题，共分为 $K$ 类。</p>
-<p><img src="/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门\general-neural-network.jpg" style="zoom:50%;"></p>
+<p>图1为神经网络的示例图（未画出偏置项），该网络用于一个多元分类问题，共分为 $K$ 类。  </p>
+<p><img src="//yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/general-neural-network.jpg" style="zoom:50%;"></p>
 <p> <center>图1 神经网络示例</center><br>用 $L$ 表示神经网络总层数， $s_l$ 表示第 $l$ 层的神经元个数（不包括偏置项），共有 $M$ 个数据，数据记为</p>
 <script type="math/tex; mode=display">
 {\left\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),\cdots,(x^{(M)},y^{(M)}) \right\}}</script><p>激活函数记为</p>
@@ -446,10 +446,10 @@ g(x)=\frac{1}{1+e^{-x}}</script><p>记 $\delta_j^{(l)}$ 为第 $l$ 层，第 $j$
 \delta^{(2)}=\left(\Theta^{(2)}\right)^{T} \delta^{(3)} \cdot * g^{\prime}\left(z^{(2)}\right)</script><h3 id="计算图及公式推导"><a href="#计算图及公式推导" class="headerlink" title="计算图及公式推导"></a>计算图及公式推导</h3><p> 要正确理解 BP 算法，有两种方法，一种是基于数学式，一种是基于计算图。前者是比较常见的方法，该方法严密简洁且合理，但如果一上来就围绕数学式进行探讨，会忽略一些根本的东西[2]。但笔者认为，只根据计算图进行理解，不利于后续的编程计算。因而本文将二者相结合进行算法的推导。</p>
 <p>计算图按照图中的数据类型可分为两类：标量计算图和矩阵计算图。</p>
 <h4 id="标量计算图"><a href="#标量计算图" class="headerlink" title="标量计算图"></a>标量计算图</h4><p>对于标量计算图，根据链式法则可以得到下图所示的结果：</p>
-<p><img src="/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门\computational-graph.jpg" style="zoom:67%;"></p>
+<p><img src="//yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/computational-graph.jpg" style="zoom:67%;"></p>
 <p><center>图2 标量计算图</center><br>在该图中，为使表示清晰，我们省略了反向传播的箭头。以箭头上方的数字表示正向传播的数值，箭头下方的为反向传播的数值。</p>
 <h4 id="矢量计算图1"><a href="#矢量计算图1" class="headerlink" title="矢量计算图1"></a>矢量计算图1</h4><p>对于矢量计算图，涉及到标量对矩阵的导数[3]，输出层的计算图如图3。</p>
-<p><img src="/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门\computational-graph-m1.jpg" style="zoom:67%;"></p>
+<p><img src="//yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/computational-graph-m1.jpg" style="zoom:67%;"></p>
 <p><center>图3 矩阵计算图1</center><br>计算推导过程如下：</p>
 <p>若不考虑正则化，总损失函数的矢量化形式为</p>
 <script type="math/tex; mode=display">
@@ -462,7 +462,7 @@ J'=-y^Tlog(a^{(4)})+(\mathbf{1}-y)^Tlog(\mathbf{1}-a^{(4)})</script><p>其中，
 \delta^{(4)}=\frac{\partial J’}{\partial z^{(4)}}=\frac{\partial J’}{\partial a^{(4)}}\frac{\partial a^{(4)}}{\partial z^{(4)}}=\left[\frac{\mathbf{1}-y}{\mathbf{1}-a^{(4)}}-\frac{y}{a^{(4)}}\right]\odot a^{(4)}\odot (1-a^{(4)})=a^{(4)}-y</script><p>式中，符号 $\odot$ 为逐元素乘法。</p>
 <p>由此，得到如图3所示的计算图。</p>
 <h4 id="矢量计算图2"><a href="#矢量计算图2" class="headerlink" title="矢量计算图2"></a>矢量计算图2</h4><p>按照矢量计算图1的思路，继续反向传播，以正向传播中的 ${z^{(4)}=\Theta^{(3)} a^{(3)}}$ 为例，我们给出如下计算图：</p>
-<p><img src="/2019/11/24/神经网络Backpropagation算法入门/神经网络Backpropagation算法入门\computational-graph-m2.jpg" style="zoom:67%;"></p>
+<p><img src="//yimsun97.github.io/2019/11/24/神经网络Backpropagation算法入门/computational-graph-m2.jpg" style="zoom:67%;"></p>
 <p><center>图4 矩阵计算图2</center><br>计算推导过程如下：</p>
 <script type="math/tex; mode=display">
 \mathrm{d}J'=tr(\frac{\partial J'}{\partial z^{(4)}}^T\mathrm{d}z^{(4)})=tr(\frac{\partial J'}{\partial z^{(4)}}^T\mathrm{d}\Theta^{(3)}\cdot a^{(3)})=tr(a^{(3)}\frac{\partial J'}{\partial z^{(4)}}^T\mathrm{d}\Theta^{(3)})</script><p>故有</p>
