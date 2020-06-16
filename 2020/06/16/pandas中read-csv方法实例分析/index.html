@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="BatchFile,">
+  <meta name="keywords" content="Python,">
 
 
 
@@ -85,18 +85,26 @@
 
 
 
-<meta name="description" content="bat 批处理脚本是 Windows 系统上用于批量执行任务的脚本，其后缀名为 .bat。利用批处理文件与“胶水语言” Python 相结合，能解决很多情况下程序的自动化运行问题，为学习、科研、工作上带来很大的便利。">
-<meta name="keywords" content="BatchFile">
+<meta name="description" content="pandas 中的 read_csv 方法是一个十分强大的读入数据的方法，官网的 read_csv 的参数列表如下。看这些参数的解释，都能十分详细地了解该方法的用法，网络上也有很多中文版的参数翻译。但是，对于基本的应用情景，缺乏比较到位的解释，导致每次导入数据时都要看文档，试错数次才能正确读入数据，降低了数据分析的效率。本文旨在通过简单的例子，对该方法的具体应用做一个整体的总结和分析，以期覆盖常">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bat批处理总结">
-<meta property="og:url" content="https://yimsun97.github.io/2020/04/04/bat批处理总结/index.html">
+<meta property="og:title" content="pandas中read_csv方法实例分析">
+<meta property="og:url" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/index.html">
 <meta property="og:site_name" content="Eric Sun&#39;s Blog">
-<meta property="og:description" content="bat 批处理脚本是 Windows 系统上用于批量执行任务的脚本，其后缀名为 .bat。利用批处理文件与“胶水语言” Python 相结合，能解决很多情况下程序的自动化运行问题，为学习、科研、工作上带来很大的便利。">
+<meta property="og:description" content="pandas 中的 read_csv 方法是一个十分强大的读入数据的方法，官网的 read_csv 的参数列表如下。看这些参数的解释，都能十分详细地了解该方法的用法，网络上也有很多中文版的参数翻译。但是，对于基本的应用情景，缺乏比较到位的解释，导致每次导入数据时都要看文档，试错数次才能正确读入数据，降低了数据分析的效率。本文旨在通过简单的例子，对该方法的具体应用做一个整体的总结和分析，以期覆盖常">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-04T11:07:09.328Z">
+<meta property="og:image" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/test_1.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/df1.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/df2.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/test_2.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/df3.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/test_4.jpg">
+<meta property="og:image" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/df4.jpg">
+<meta property="og:updated_time" content="2020-06-16T09:29:02.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bat批处理总结">
-<meta name="twitter:description" content="bat 批处理脚本是 Windows 系统上用于批量执行任务的脚本，其后缀名为 .bat。利用批处理文件与“胶水语言” Python 相结合，能解决很多情况下程序的自动化运行问题，为学习、科研、工作上带来很大的便利。">
+<meta name="twitter:title" content="pandas中read_csv方法实例分析">
+<meta name="twitter:description" content="pandas 中的 read_csv 方法是一个十分强大的读入数据的方法，官网的 read_csv 的参数列表如下。看这些参数的解释，都能十分详细地了解该方法的用法，网络上也有很多中文版的参数翻译。但是，对于基本的应用情景，缺乏比较到位的解释，导致每次导入数据时都要看文档，试错数次才能正确读入数据，降低了数据分析的效率。本文旨在通过简单的例子，对该方法的具体应用做一个整体的总结和分析，以期覆盖常">
+<meta name="twitter:image" content="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/test_1.jpg">
 
 
 
@@ -126,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://yimsun97.github.io/2020/04/04/bat批处理总结/">
+  <link rel="canonical" href="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/">
 
 
 
 
 
-  <title>bat批处理总结 | Eric Sun's Blog</title>
+  <title>pandas中read_csv方法实例分析 | Eric Sun's Blog</title>
   
 
 
@@ -301,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yimsun97.github.io/2020/04/04/bat批处理总结/">
+    <link itemprop="mainEntityOfPage" href="https://yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eric Sun">
@@ -318,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">bat批处理总结</h1>
+          <h1 class="post-title" itemprop="name headline">pandas中read_csv方法实例分析</h1>
         
 
         <div class="post-meta">
@@ -330,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-04T18:48:49+08:00">
-                2020-04-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-16T17:25:03+08:00">
+                2020-06-16
               </time>
             
 
@@ -395,116 +403,49 @@
       
 
       
-        <p>bat 批处理脚本是 Windows 系统上用于批量执行任务的脚本，其后缀名为 <code>.bat</code>。利用批处理文件与“胶水语言” Python 相结合，能解决很多情况下程序的自动化运行问题，为学习、科研、工作上带来很大的便利。</p>
+        <p> <code>pandas</code> 中的 <code>read_csv</code> 方法是一个十分强大的读入数据的方法，官网的 <code>read_csv</code> 的参数列表如下。看这些参数的解释，都能十分详细地了解该方法的用法，网络上也有很多中文版的参数翻译。但是，对于基本的应用情景，缺乏比较到位的解释，导致每次导入数据时都要看文档，试错数次才能正确读入数据，降低了数据分析的效率。本文旨在通过简单的例子，对该方法的具体应用做一个整体的总结和分析，以期覆盖常见的数据读入情景，方便日后使用。</p>
 <a id="more"></a>
-<p>近来做一个科研项目，需要运行某一个模型软件数十次乃至上百次。此前对 bat 批处理的了解比较有限，借此机会完成项目的机会，对常用的 bat 脚本做了一个简单的入门学习。特此对过程中学习到的知识点作简要总结。</p>
-<h2 id="命令总结"><a href="#命令总结" class="headerlink" title="命令总结"></a>命令总结</h2><h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><p>“echo”一词英文本意为“发出回声”、“产生回响”，大致相当于 Python 中的 print 函数，可以在 cmd 窗口中显示消息，也有打开和关闭回显的功能。常用的代码有以下两种：</p>
-<ol>
-<li>在屏幕上打印“hello world”</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> hello world</span><br></pre></td></tr></table></figure>
-<ol>
-<li>关闭运行命令本身的显示</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br></pre></td></tr></table></figure>
-<h3 id><a href="#" class="headerlink" title="@"></a>@</h3><p>加在其他命令行最前面，表示运行时不显示该命令行本身。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> Now starting the model...</span><br></pre></td></tr></table></figure>
-<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><p>从一个批处理程序调用其他批处理程序，而不终止原来的程序。举个例子，下面的命令调用 Anaconda 的 activate.bat 脚本，使用该操作可以在 cmd 窗口中激活某一环境。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">call D:\Commonsoftware\Anaconda\Scripts\activate.bat</span><br><span class="line">call activate myenv</span><br></pre></td></tr></table></figure>
-<p>其中，<code>myenv</code> 是需要激活的环境名称。</p>
-<h3 id="pause"><a href="#pause" class="headerlink" title="pause"></a>pause</h3><p>在执行完命令后显示“请按任意键继续···”字样。该命令一般用来调试程序，确保批处理代码在执行中没有出现任何问题。常放在 bat 文件末尾和其他想终止程序的地方。</p>
-<h3 id="REM"><a href="#REM" class="headerlink" title="REM"></a>REM</h3><p>bat 文件注释。对应的 Notepad++ 的快捷键为 <code>Ctrl+k</code> （单行、多行注释）&amp; <code>Ctrl+q</code> （区块注释）。</p>
-<h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><p>批处理中执行条件处理的语句。首先，需要了解 bat 文件中比较运算符的有效值。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EQU</td>
-<td>等于</td>
-<td>LEQ</td>
-<td>小于或等于</td>
-</tr>
-<tr>
-<td>NEQ</td>
-<td>不等于</td>
-<td>GTR</td>
-<td>大于</td>
-</tr>
-<tr>
-<td>LSS</td>
-<td>小于</td>
-<td>GEQ</td>
-<td>大于或等于</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>下面来看一个例子。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> /a a=123</span><br><span class="line"><span class="built_in">set</span> /a b=456</span><br><span class="line"><span class="keyword">if</span> %a% geq %b% (</span><br><span class="line">  <span class="built_in">echo</span> %a%^&gt;=%b%</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">  <span class="built_in">echo</span> %a%^&lt;%b% </span><br><span class="line">)</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>需要注意的是，if 语句后的括号必须要写在与其同一行的末尾。</p>
-<p>此外，在进行字符串比较时，if 后加 <code>/i</code> 命令可强制字符串比较时忽略大小写。</p>
-<h3 id="choice"><a href="#choice" class="headerlink" title="choice"></a>choice</h3><p>此命令本意是显示信息并暂停批处理程序，让用户在做一些交互的选择。比如 Anaconda 中安装 Python 包时的提示是否安装的 [y/n] 就是利用的这个命令。</p>
-<p>有时，利用此命令占用内存较小、计时较为精确的特点，可以用此命令进行计时，程序会等待特定的时间，再执行下面的命令。以下语句表示等待 10 秒再执行批处理程序。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choice /t 10 /d y /n &gt;nul</span><br></pre></td></tr></table></figure>
-<p>值得注意的是，用该命令计时有个缺陷：只能计时 0~9999 秒之内的时间（约 2.7 小时，但一般情况还是够用的）。</p>
-<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><p>循环命令。直接看代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">REM 1</span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">for</span> %%a <span class="keyword">in</span> (1, 1, 5) <span class="keyword">do</span> (</span><br><span class="line">  <span class="built_in">echo</span> %%a</span><br><span class="line">)</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>执行结果：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">1</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
-<p>以上代码表示，变量 <code>a</code> 在集合 <code>(1, 1, 5)</code> 中进行遍历，然后回显出值。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">for</span> /l %%a <span class="keyword">in</span> (1, 1, 5) <span class="keyword">do</span> (</span><br><span class="line">  <span class="built_in">echo</span> %%a</span><br><span class="line">)</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>执行结果：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
-<p>以上代码表示，变量 <code>a</code> 从 1 开始，步长为 1，终值为 5，进行循环。</p>
-<p>两段代码的区别在于，第二段代码在 for 循环开始时，多了 <code>/l</code> 参数。</p>
-<h3 id="setlocal"><a href="#setlocal" class="headerlink" title="setlocal"></a>setlocal</h3><p>启动批处理文件中环境变量的本地化。通俗地讲，该命令执行后会使得批处理程序对局部变量进行修改，而不是始终保持全局变量的值。如果这里没有看懂的话，请比较以下两段代码就清楚了：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">REM 1</span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> /a a=123</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> %a% equ 123 (</span><br><span class="line">  <span class="built_in">set</span> /a a=%a%*2</span><br><span class="line">  <span class="built_in">echo</span> %a%</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">  <span class="built_in">echo</span> %a% not equal to 123 </span><br><span class="line">)</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>执行结果为：123。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">REM 2</span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> /a a=123</span><br><span class="line"></span><br><span class="line">setlocal enableDelayedExpansion</span><br><span class="line"><span class="keyword">if</span> !a! equ 123 (</span><br><span class="line">  <span class="built_in">set</span> /a a=!a!*2</span><br><span class="line">  <span class="built_in">echo</span> !a!</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">  <span class="built_in">echo</span> !a! not equal to 123 </span><br><span class="line">)</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>执行结果为：246。</p>
-<p>执行结果差异的原因在于第 1 段代码没有开启环境变量的本地化，因此在设置变量值后，引用变量时仍然是全局变量的值；使用 <code>setlocal</code> 指令后，解决了这一问题。显然，第 2 段代码是我们预期的结果。</p>
-<p>比较这两段代码可以发现，使用 <code>setlocal</code> 主要需要注意以下两点：</p>
-<ol>
-<li>需要声明 <code>setlocal enableDelayedExpansion</code> ；</li>
-<li>变量引用形式均为 <code>!a!</code> 。</li>
-</ol>
-<h3 id="taskkill"><a href="#taskkill" class="headerlink" title="taskkill"></a>taskkill</h3><p>结束某一进程。常用的有以下两种用法：</p>
-<ol>
-<li>结束已知应用名称的某一进程；</li>
-<li>结束已知进程码的某一进程。</li>
-</ol>
-<p>以关闭 Notepad++.exe 程序为例举些例子：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REM 1</span><br><span class="line">taskkill /im notepad++.exe</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REM 2</span><br><span class="line">taskkill /pid 1376 -t -f</span><br></pre></td></tr></table></figure>
-<p>进程码可以通过任务管理器查询，或者通过 <code>cmd</code> 运行 <code>tasklist</code> 获取。</p>
-<p>参数 <code>-t</code> 表示结束该进程，<code>-f</code> 表示强制结束该进程及所有子进程。</p>
-<h2 id="代码总结"><a href="#代码总结" class="headerlink" title="代码总结"></a>代码总结</h2><h3 id="自动化运行-IPython"><a href="#自动化运行-IPython" class="headerlink" title="自动化运行 IPython"></a>自动化运行 IPython</h3><p>有时想启动 Ipython 做个简单的计算或者验证，与打开 Spyder 或者 PyCharm 等 IDE 相比，此时调出 Ipython 最为方便省时间。但打开 Anaconda Prompt 又需要输入激活环境等命令，比较麻烦。使用下面的命令可以大大简化这样的问题。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">REM ip.bat</span><br><span class="line">call D:\Commonsoftware\Anaconda\Scripts\activate.bat</span><br><span class="line">call activate myenv</span><br><span class="line">call jupyter qtconsole</span><br></pre></td></tr></table></figure>
-<p>如果不想把脚本防在桌面，可以配置环境变量，使用 <code>Win+R</code> 快捷键输入批处理文件名 <code>ip.bat</code> 就能方便地打开 IPython。</p>
-<h3 id="自动化运行-Jupyter-Notebook"><a href="#自动化运行-Jupyter-Notebook" class="headerlink" title="自动化运行 Jupyter Notebook"></a>自动化运行 Jupyter Notebook</h3><p>与以上情景类似，使用以下代码，轻松打开 Jupyter Notebook：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">E:</span><br><span class="line"><span class="built_in">cd</span> E:</span><br><span class="line">call D:\Commonsoftware\Anaconda\Scripts\activate.bat </span><br><span class="line">call activate myenv</span><br><span class="line">start chrome http://localhost:8888/tree</span><br><span class="line">call jupyter notebook</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>默认的打开文件路径在 E 盘，当然可以根据个人情况进行修改~</p>
-<h3 id="在-cmd-窗口中写-Python语句"><a href="#在-cmd-窗口中写-Python语句" class="headerlink" title="在 cmd 窗口中写 Python语句"></a>在 cmd 窗口中写 Python语句</h3><p>有时在命令行窗口中想做些简单的计算或文本处理，无需再打开 Python IDE，直接在 cmd 窗口中就可以写简单的 Python 程序：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">"import numpy as np; print(np.arange(6))"</span></span><br></pre></td></tr></table></figure>
-<h3 id="自动化运行模型"><a href="#自动化运行模型" class="headerlink" title="自动化运行模型"></a>自动化运行模型</h3><p>回到最初的目的应用场景，下面是自动化运行某一模型或者应用程序的示例代码。<code>cyc</code> 是运行次数，<code>ti</code> 是模型运行一次的持续时间，<code>start</code> 语句是新建一个 cmd 窗口运行程序，<code>&amp;&amp;</code> 表示程序先后进行，即先打开程序路径再运行程序，程序中应用 Python 脚本可以进行模型的前处理和后处理。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"><span class="built_in">set</span> cyc=100</span><br><span class="line"><span class="built_in">set</span> ti=3000</span><br><span class="line">call D:\anaconda3\Scripts\activate.bat</span><br><span class="line">call activate myenv</span><br><span class="line">python model_preprocess.py</span><br><span class="line"><span class="keyword">for</span> /l %% i <span class="keyword">in</span> (1,1,!cyc!) <span class="keyword">do</span> (</span><br><span class="line">   start cmd /c <span class="string">"cd ./AppPath &amp;&amp; model.exe"</span></span><br><span class="line">   choice /t !ti! /d y /n &gt;nul</span><br><span class="line">   taskkill /f /im model.exe</span><br><span class="line">)</span><br><span class="line">python model_postprocess.py</span><br><span class="line">endlocal</span><br><span class="line">taskkill /f /im cmd.exe</span><br></pre></td></tr></table></figure>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol>
-<li>通过本文，基本上对批处理有了个简单的入门，对某些参数功能不清楚时，在 cmd 窗口中输入 <code>/?</code> 是最简单快捷的查看文档的方式；</li>
-<li>有些时候在网上复制的代码不能直接在命令行及批处理文件中应用，应将其转化为 ANSI 编码后查看没有乱码后运行才不会出错；</li>
-<li>批处理文件作为 Windows 系统的自动化处理的利器，可以做到一些 Python 脚本不能做到或者不方便做到的事情，此时简单学些批处理可以大大提高工作效率和自动化水平，但是如果 Python 脚本可以做到的事采用 Python 更方便快捷，易于调试和维护。 </li>
-</ol>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>张亮清编著《DOS/BIOS高手真经》第2版</li>
-<li><a href="https://blog.csdn.net/sanqima/article/details/37818115" target="_blank" rel="noopener">bat中if语句的用法</a> </li>
-<li><a href="https://blog.csdn.net/jk110333/article/details/41869053" target="_blank" rel="noopener">cmd-bat批处理命令延时方法</a> </li>
+<h3 id="典型的-csv-文件"><a href="#典型的-csv-文件" class="headerlink" title="典型的 csv 文件"></a>典型的 csv 文件</h3><p>典型的 csv 文件如以下的图中所示，由第一行的列名称和多行组成，不同项目之间以英文逗号最为间隔符。</p>
+<p><img src="//yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/test_1.jpg" alt="test_1" style="zoom:80%;"></p>
+<p>这种文件可以用最简单的格式读取。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">file_name = <span class="string">'test_1.csv'</span></span><br><span class="line">data1 = pd.read_csv(file_name)</span><br></pre></td></tr></table></figure>
+<p>data1 读取后得到下面的 DataFrame：</p>
+<p><img src="//yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/df1.jpg" alt="df1" style="zoom: 80%;"></p>
+<p>发现这个 DataFrame 的 index 并没有用我们数据中的 id，想用数据中的 id 作为 index，只需要按下面的读取格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data2 = pd.read_csv(file_name, index_col=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>data2 读取后得到</p>
+<p><img src="//yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/df2.jpg" alt="df2" style="zoom: 80%;"></p>
+<h3 id="含有日期格式的-csv-文件"><a href="#含有日期格式的-csv-文件" class="headerlink" title="含有日期格式的 csv 文件"></a>含有日期格式的 csv 文件</h3><p>有时文件中有日期格式，可以用 read_csv 直接将日期转换成 python 可以识别的 datetime64[ns] 对象，方便后面的对时间序列数据的处理。示例文件如下图所示。</p>
+<p><img src="//yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/test_2.jpg" alt="test_2" style="zoom:80%;"></p>
+<p>这里采用 read_csv 中的 <code>parse_date</code> 参数。有以下几种形式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">file_name =<span class="string">'test_2.csv'</span></span><br><span class="line">data1 = pd.read_csv(file_name, parse_dates=[<span class="string">'datetime'</span>])</span><br><span class="line">data2 = pd.read_csv(file_name, parse_dates=[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line">data3 = pd.read_csv(file_name, parse_dates=&#123;<span class="string">'mydate'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]&#125;)</span><br><span class="line">data4 = pd.read_csv(file_name, parse_dates=&#123;<span class="string">'mydate'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]&#125;, </span><br><span class="line">                    keep_date_col=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>data1~data4 的内容分别如下：</p>
+<p><img src="//yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/df3.jpg" alt="df3" style="zoom:80%;"></p>
+<p>data1 用数据中名为 <code>datetime</code> 的列作日期解析用，data2 用第 1，2，3 列的内容作日期解析用，data3 给 1，2，3 列的数据用用户自定义的 <code>mydate</code> 命名，data4 通过 <code>keep_date_col</code> ，保持源数据的被解析列正常读入不被修改。</p>
+<h3 id="固定列宽的-txt-文件"><a href="#固定列宽的-txt-文件" class="headerlink" title="固定列宽的 txt 文件"></a>固定列宽的 txt 文件</h3><p>对于固定列宽的 txt 文件，也可以用 read_csv 方法读取，示例文件如下：</p>
+<p><img src="//yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/test_4.jpg" alt="test_4"></p>
+<p>这种文件两列间用不定数量的空格间隔，每一列对齐。读取方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data1 = pd.read_csv(file_name, header=<span class="literal">None</span>, sep=<span class="string">'\s+'</span>)</span><br></pre></td></tr></table></figure>
+<p><code>sep</code> 参数可以定义列与列之间的分隔符，默认为逗号，读固定列宽的 txt 文件时，指定为 ‘\s+’ 采用的是正则表达式的写法，意思是分隔符为一个至多个（数量不限）的空格。此时得到如下的读取结果：</p>
+<p><img src="//yimsun97.github.io/2020/06/16/pandas中read-csv方法实例分析/df4.jpg" alt="df4" style="zoom: 80%;"></p>
+<h3 id="自定义读取内容"><a href="#自定义读取内容" class="headerlink" title="自定义读取内容"></a>自定义读取内容</h3><p>当然，读取文件的最高境界就是自定义读取内容。这部分用 read_csv 就不能完全胜任了。需要用到 python 原生的 read/readline/readlines 方法，文件指针 seek/tell 方法，以及少部分正则表达式的知识。</p>
+<p>比如说，我们想读取数据文件中数据 33.40 上一行的数据是什么，可行的思路有三种，一种是利用 read_csv 方法读取整个文件，再利用 numpy 中的 where 方法查找数据 33.40，最后用 <code>iloc</code> 索引查到所求的数为 34.70。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ix, iy = np.where(data1 == 33.40)</span><br><span class="line">data1.iloc[ix-1, iy]</span><br></pre></td></tr></table></figure>
+<p>该方法适用于小文件，可以一次性地读取到内存中作进一步处理。</p>
+<p>此外，我们可以用 python 原生的 readlines 方法做到这一点：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">input_str = <span class="string">'33.40'</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test_1.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    linelist = f.readlines()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, line <span class="keyword">in</span> enumerate(linelist):</span><br><span class="line">    <span class="keyword">if</span> input_str <span class="keyword">in</span> line:</span><br><span class="line">        ii = i<span class="number">-1</span></span><br><span class="line">        idx = line.find(input_str)</span><br><span class="line"></span><br><span class="line">target_str = linelist[ii][idx:idx+len(input_str)]</span><br></pre></td></tr></table></figure>
+<p>即通过 readlines 方法读取文件内容作为列表形式储存，再对所查找的内容逐行匹配，匹配到后记录索引，最终找到所求的数据为 34.70。</p>
+<p>同样的，该方法是一次读取所有的文件内容，适用于小文件。</p>
+<p>以下是一种适用于大文件的方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">input_str = <span class="string">'33.40'</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test_1.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    last_last_pos = <span class="literal">None</span></span><br><span class="line">    last_pos = f.tell()</span><br><span class="line">    line = f.readline()</span><br><span class="line">    <span class="keyword">while</span> line:</span><br><span class="line">        <span class="keyword">if</span> input_str <span class="keyword">in</span> line:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span>(last_last_pos <span class="keyword">is</span> <span class="literal">None</span>):</span><br><span class="line">                f.seek(last_last_pos)</span><br><span class="line">                idx = line.find(input_str)</span><br><span class="line">                last_line = f.readline()</span><br><span class="line">                target_str = last_line[idx:idx+len(input_str)]</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                print(<span class="string">'data in the first line'</span>)</span><br><span class="line">        </span><br><span class="line">        last_last_pos = last_pos</span><br><span class="line">        last_pos = f.tell()</span><br><span class="line">        line = f.readline()</span><br></pre></td></tr></table></figure>
+<p>tell 方法是返回当前文件指针位置的方法，readline 方法每次读取文件中的一行，seek 方法可将文件指针跳转至指定位置。</p>
+<p>以上代码首先记录文件开始的指针位置，然后向下读取一行，如果未读至文件尾，即判断所查内容是否在当前行，若在，回到上一行找对应位置的数据即可，若不在，记录当前行位置后，读取下一行内容，依次类推，直至找到所求数据 34.70 为止。</p>
+<p>判断应该用小文件方法还是大文件方法的依据是，如果计算机能够一次性读取文件内容，用小文件方法速度上占优，但如果计算机内存不足以读取所有文件内容，则应该按照大文件方法进行读取。</p>
+<p>综合以上内容，我们对 read_csv 方法的读取数据功能的应用作了初步讨论。在实际文件读取的过程中，只有将固有方法、python 文件 I/O 及正则表达式灵活运用，才能简介快速地完成数据的读取操作，为后续的数据分析提供支持。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank" rel="noopener">pandas read_csv 方法官网</a></li>
+<li><a href="https://stackoverflow.com/questions/40546376/how-to-seek-to-a-specific-line-in-a-file" target="_blank" rel="noopener">Stack Overfow：如何找到文件中的特定行</a></li>
+<li><a href="https://www.runoob.com/python/file-seek.html" target="_blank" rel="noopener">Python 菜鸟教程：seek 方法</a></li>
 </ol>
 
       
@@ -523,7 +464,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/BatchFile/" rel="tag"># BatchFile</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -536,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/24/神经网络Backpropagation算法入门/" rel="next" title="神经网络Backpropagation算法入门">
-                <i class="fa fa-chevron-left"></i> 神经网络Backpropagation算法入门
+              <a href="/2020/04/07/Windows下的Spyder快捷键总结/" rel="next" title="Windows下的Spyder快捷键总结">
+                <i class="fa fa-chevron-left"></i> Windows下的Spyder快捷键总结
               </a>
             
           </div>
@@ -545,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/07/Windows下的Spyder快捷键总结/" rel="prev" title="Windows下的Spyder快捷键总结">
-                Windows下的Spyder快捷键总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -727,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令总结"><span class="nav-number">1.</span> <span class="nav-text">命令总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo"><span class="nav-number">1.1.</span> <span class="nav-text">echo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">@</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">1.3.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pause"><span class="nav-number">1.4.</span> <span class="nav-text">pause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REM"><span class="nav-number">1.5.</span> <span class="nav-text">REM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-number">1.6.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#choice"><span class="nav-number">1.7.</span> <span class="nav-text">choice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-number">1.8.</span> <span class="nav-text">for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setlocal"><span class="nav-number">1.9.</span> <span class="nav-text">setlocal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#taskkill"><span class="nav-number">1.10.</span> <span class="nav-text">taskkill</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码总结"><span class="nav-number">2.</span> <span class="nav-text">代码总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动化运行-IPython"><span class="nav-number">2.1.</span> <span class="nav-text">自动化运行 IPython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动化运行-Jupyter-Notebook"><span class="nav-number">2.2.</span> <span class="nav-text">自动化运行 Jupyter Notebook</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-cmd-窗口中写-Python语句"><span class="nav-number">2.3.</span> <span class="nav-text">在 cmd 窗口中写 Python语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动化运行模型"><span class="nav-number">2.4.</span> <span class="nav-text">自动化运行模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型的-csv-文件"><span class="nav-number">1.</span> <span class="nav-text">典型的 csv 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#含有日期格式的-csv-文件"><span class="nav-number">2.</span> <span class="nav-text">含有日期格式的 csv 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定列宽的-txt-文件"><span class="nav-number">3.</span> <span class="nav-text">固定列宽的 txt 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义读取内容"><span class="nav-number">4.</span> <span class="nav-text">自定义读取内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
